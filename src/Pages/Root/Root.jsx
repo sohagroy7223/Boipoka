@@ -7,8 +7,8 @@ import NavbarDaisy from "../../Component/Header/NavbarDaisy";
 const Root = () => {
   return (
     <div>
-      {/* <Navbar></Navbar> */}
-      <NavbarDaisy></NavbarDaisy>
+      <Navbar></Navbar>
+      {/* <NavbarDaisy></NavbarDaisy> */}
       <Outlet></Outlet>
       <Footer></Footer>
     </div>
