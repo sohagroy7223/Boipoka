@@ -1,54 +1,54 @@
 import React, { useState } from "react";
-import { VscThreeBars } from "react-icons/vsc";
+import { NavLink } from "react-router";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { VscChromeClose } from "react-icons/vsc";
 
 const Navbar = () => {
-  const [show, setShow] = useState(false);
+  const [open, setOpen] = useState(false);
   const handelChange = () => {
-    setShow(!show);
+    setOpen(!open);
   };
 
-  const nav = (
-    <div className="md:flex hidden gap-4 text-xl ">
-      <ul className="text-[#131313] hover:border-2 hover:text-[#23BE0A] p-2 hover:rounded-lg ">
-        Home
-      </ul>
-      <ul className="text-[#131313] hover:border-2 hover:text-[#23BE0A] p-2 hover:rounded-lg ">
-        Listed Books
-      </ul>
-      <ul className="text-[#131313] hover:border-2 hover:text-[#23BE0A] p-2 hover:rounded-lg ">
-        Pages to Read
-      </ul>
-    </div>
-  );
   return (
-    <div className="bg-white relative h-24 p-6">
-      <nav className="flex justify-between w-11/12 mx-auto">
-        <VscThreeBars />
-        {/* logo */}
-        <h3 className="text-[#131313] font-bold text-2xl">Book Vibe</h3>
-        {nav}
+    <nav className="bg-teal-600 flex  justify-between p-5 items-center">
+      {/* logo */}
+      <span onClick={handelChange} className="flex relative items-center gap-3">
+        {" "}
+        <span className="md:hidden">
+          {open ? <VscChromeClose size={25} /> : <GiHamburgerMenu size={25} />}
+        </span>
+        <h2 className="text-2xl hidden md:flex  font-bold">Book Vibe</h2>
+        <ul
+          className={`md:hidden absolute w-44 h-36 rounded-2xl  bg-emerald-600 ml-8 duration-800 p-2.5  ${open ? "top-2" : "-top-44"}`}
+        >
+          <li className="mr-7 text-lg hover:bg-amber-500 p-1 hover:w-full font-semibold ">
+            <NavLink to={"/home"}>Home</NavLink>
+          </li>
+          <li className="mr-7 text-lg hover:bg-amber-500 p-1 hover:w-full font-semibold">
+            <NavLink to={"/listedBooks"}>Listed Books</NavLink>
+          </li>
+          <li className="mr-7 text-lg hover:bg-amber-500 p-1 hover:w-full font-semibold">
+            <NavLink to={"/PagesToRead"}>Pages to Read</NavLink>
+          </li>
+        </ul>
+      </span>
 
-        <div className="md:hidden   bg-teal-200 p-3 w-46 gap-4 text-xl ">
-          <ul className="text-[#131313] hover:border-2 hover:text-[#23BE0A] p-2 hover:rounded-lg ">
-            Home
-          </ul>
-          <ul className="text-[#131313] hover:border-2 hover:text-[#23BE0A] p-2 hover:rounded-lg ">
-            Listed Books
-          </ul>
-          <ul className="text-[#131313] hover:border-2 hover:text-[#23BE0A] p-2 hover:rounded-lg ">
-            Pages to Read
-          </ul>
-        </div>
-        <div className="flex">
-          <button className="bg-[#23BE0A] p-2.5 font-semibold rounded-lg mr-2 cursor-pointer">
-            sign in
-          </button>
-          <button className="bg-[#59C6D2] hidden md:block p-2.5 font-semibold rounded-lg mr-2 cursor-pointer">
-            sign up
-          </button>
-        </div>
-      </nav>
-    </div>
+      <ul className="hidden md:flex">
+        <li className="mr-7 text-lg font-semibold ">
+          <NavLink to={"/home"}>Home</NavLink>
+        </li>
+        <li className="mr-7 text-lg font-semibold">
+          <NavLink to={"/listedBooks"}>Listed Books</NavLink>
+        </li>
+        <li className="mr-7 text-lg font-semibold">
+          <NavLink to={"/PagesToRead"}>Pages to Read</NavLink>
+        </li>
+      </ul>
+      <div className="flex md:block md:p-3">
+        <button className="btn mr-3">sign in</button>
+        <button className="btn mr-3">sign up</button>
+      </div>
+    </nav>
   );
 };
 
