@@ -6,7 +6,7 @@ import NavbarDaisy from "../../Component/Header/NavbarDaisy";
 
 const Root = () => {
   return (
-    <div>
+    <div className="max-w-6xl mx-auto">
       <Navbar></Navbar>
       {/* <NavbarDaisy></NavbarDaisy> */}
       <Outlet></Outlet>

@@ -35,13 +35,13 @@ const Navbar = () => {
 
       <ul className="hidden md:flex">
         <li className="mr-7 text-lg font-semibold ">
-          <NavLink to={"/home"}>Home</NavLink>
+          <NavLink to={``}>Home</NavLink>
         </li>
         <li className="mr-7 text-lg font-semibold">
-          <NavLink to={"/listedBooks"}>Listed Books</NavLink>
+          <NavLink to={``}>Listed Books</NavLink>
         </li>
         <li className="mr-7 text-lg font-semibold">
-          <NavLink to={"/PagesToRead"}>Pages to Read</NavLink>
+          <NavLink to={``}>Pages to Read</NavLink>
         </li>
       </ul>
       <div className="flex md:block md:p-3">
