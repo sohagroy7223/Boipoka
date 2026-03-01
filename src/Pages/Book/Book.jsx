@@ -9,9 +9,9 @@ const Book = ({ book }) => {
   //   console.log(book);
   //   console.log(book);
   return (
-    <Link to={`/bookDetails/${bookId}`}>
-      <div className="bg-white border-2 mx-auto m-1 p-4 rounded-2xl ">
-        <div className="bg-[#F3F3F3] flex justify-center rounded-2xl items-center w-81.5 h-57.5 mt-2">
+    <Link to={`bookDetails/${bookId}`}>
+      <div className="bg-white border-2 mx-auto  p-3 ml-2 m-2 rounded-2xl ">
+        <div className="bg-[#F3F3F3] flex justify-center mx-auto rounded-2xl items-center w-81.5 h-57.5 mt-2">
           <img className="w-33.5 h-34 mx-auto  bg-cover" src={image} alt="" />
         </div>
         <div>
