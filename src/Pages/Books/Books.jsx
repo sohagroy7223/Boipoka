@@ -23,7 +23,7 @@ const Books = ({ bookData }) => {
 
   return (
     <div>
-      <h2 className="text-3xl font-bold text-center mt-3.5">books</h2>
+      <h2 className="text-3xl font-bold text-center mt-10">books</h2>
       {/* 1st away **********************/}
       {/* {allBooks.map((book) => (
         <Book book={book}></Book>
@@ -36,7 +36,7 @@ const Books = ({ bookData }) => {
 
       {/* 3rd away to get data */}
       {bookData.map((book) => (
-        <Book book={book}></Book>
+        <Book key={book.bookId} book={book}></Book>
       ))}
     </div>
   );

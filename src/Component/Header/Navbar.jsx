@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-teal-600 flex  justify-between p-5 items-center">
+    <nav className="flex  justify-between p-5 items-center border-b-2 border-[#d8d8d8c2]">
       {/* logo */}
       <span onClick={handelChange} className="flex relative items-center gap-3">
         {" "}
