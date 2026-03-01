@@ -1,21 +1,41 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
+import { Suspense } from "react";
 import Book from "../Book/Book";
 
-const Books = () => {
-  const [allBooks, setAllBooks] = useState([]);
+const Books = ({ bookData }) => {
+  console.log(bookData);
+  // 1st away to fetch and get data form API ************
 
-  useEffect(() => {
-    fetch("booksData.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setAllBooks(data);
-      });
-  }, []);
-  console.log(allBooks);
+  //   const [allBooks, setAllBooks] = useState([]);
+
+  //   useEffect(() => {
+  //     fetch("booksData.json")
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         setAllBooks(data);
+  //       });
+  //   }, []);
+  //   console.log(allBooks);
+
+  // 2nd away to get data from API**************
+
+  //   const booksPromise = fetch("./booksData.json").then((res) => res.json());
+
   return (
     <div>
       <h2 className="text-3xl font-bold text-center mt-3.5">books</h2>
-      {allBooks.map((book) => (
+      {/* 1st away **********************/}
+      {/* {allBooks.map((book) => (
+        <Book book={book}></Book>
+      ))} */}
+
+      {/* 2nd away ********************* */}
+      {/* <Suspense fallback={<span>Loading...</span>}>
+        <Book booksPromise={booksPromise}></Book>
+      </Suspense> */}
+
+      {/* 3rd away to get data */}
+      {bookData.map((book) => (
         <Book book={book}></Book>
       ))}
     </div>
