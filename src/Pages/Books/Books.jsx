@@ -35,9 +35,11 @@ const Books = ({ bookData }) => {
       </Suspense> */}
 
       {/* 3rd away to get data */}
-      {bookData.map((book) => (
-        <Book key={book.bookId} book={book}></Book>
-      ))}
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full mx-auto">
+        {bookData.map((book) => (
+          <Book key={book.bookId} book={book}></Book>
+        ))}
+      </div>
     </div>
   );
 };
