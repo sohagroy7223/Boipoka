@@ -22,26 +22,26 @@ const Navbar = () => {
           className={`md:hidden absolute w-44 h-36 rounded-2xl  bg-emerald-600 ml-8 duration-800 p-2.5  ${open ? "top-2" : "-top-44"}`}
         >
           <li className="mr-7 text-lg hover:bg-amber-500 p-1 hover:w-full font-semibold ">
-            <NavLink to={"/home"}>Home</NavLink>
+            <NavLink to={"/"}>Home</NavLink>
           </li>
           <li className="mr-7 text-lg hover:bg-amber-500 p-1 hover:w-full font-semibold">
-            <NavLink to={"/listedBooks"}>Listed Books</NavLink>
+            <NavLink to={"/listed Books"}>Listed Books</NavLink>
           </li>
           <li className="mr-7 text-lg hover:bg-amber-500 p-1 hover:w-full font-semibold">
-            <NavLink to={"/PagesToRead"}>Pages to Read</NavLink>
+            <NavLink to={"/Pages to Read"}>Pages to Read</NavLink>
           </li>
         </ul>
       </span>
 
       <ul className="hidden md:flex">
         <li className="mr-7 text-lg font-semibold ">
-          <NavLink to={``}>Home</NavLink>
+          <NavLink to={"/"}>Home</NavLink>
         </li>
         <li className="mr-7 text-lg font-semibold">
-          <NavLink to={``}>Listed Books</NavLink>
+          <NavLink to={`/about`}>Listed Books</NavLink>
         </li>
         <li className="mr-7 text-lg font-semibold">
-          <NavLink to={``}>Pages to Read</NavLink>
+          <NavLink to={"/Pages to Read"}>Pages to Read</NavLink>
         </li>
       </ul>
       <div className="flex md:block md:p-3">

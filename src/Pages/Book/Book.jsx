@@ -2,30 +2,29 @@
 import { FaStar } from "react-icons/fa";
 
 const Book = ({ book }) => {
+  const { image, bookName, author, rating, tags } = book;
   //   const data = use(booksPromise);
   //   console.log(data);
   //   console.log(book);
-  console.log(book);
+  //   console.log(book);
   return (
-    <div className="bg-white border-2 mx-auto m-1 p-4 rounded-2xl mt-10">
-      <div className="bg-[#F3F3F3] flex justify-center items-center w-81.5 h-57.5 mt-2">
-        <img
-          className="w-33.5 h-34 mx-auto rounded-2xl bg-cover"
-          src={book.image}
-          alt=""
-        />
+    <div className="bg-white border-2 mx-auto m-1 p-4 rounded-2xl ">
+      <div className="bg-[#F3F3F3] flex justify-center rounded-2xl items-center w-81.5 h-57.5 mt-2">
+        <img className="w-33.5 h-34 mx-auto  bg-cover" src={image} alt="" />
       </div>
       <div>
-        <div className="flex text-[#23BE0A] mt-3">
-          <p className="bg-gray-100 p-2 rounded-2xl">Young Adult</p>
-          <p className="bg-gray-100 p-2 rounded-2xl ml-3">Identity</p>
+        <div className="flex text-[#23BE0A] gap-9 ">
+          {tags.map((tag) => (
+            <p>{tag}</p>
+          ))}
         </div>
-        <h3 className="text-black text-2xl mt-4 font-bold">{book.bookName}</h3>
-        <p className="text-gray-700 mt-4 ">by: {book.author}</p>
+        <h3 className="text-black text-2xl mt-4 font-bold">{bookName}</h3>
+        <p className="text-gray-700 mt-4 ">by: {author}</p>
+        <p className="border-2 border-dashed text-gray-300 mt-5"></p>
         <div className="flex gap-11 mt-4 justify-between">
           <p className="text-gray-600">Fiction</p>
           <div className="flex items-center gap-1.5 ">
-            <p className="text-gray-600">{book.rating}</p>
+            <p className="text-gray-600">{rating}</p>
             <FaStar className="text-gray-400" size={17} />
           </div>
         </div>
