@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Book from "../Book/Book";
 
 const Books = () => {
   const [allBooks, setAllBooks] = useState([]);
@@ -14,6 +15,9 @@ const Books = () => {
   return (
     <div>
       <h2 className="text-3xl font-bold text-center mt-3.5">books</h2>
+      {allBooks.map((book) => (
+        <Book book={book}></Book>
+      ))}
     </div>
   );
 };
