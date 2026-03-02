@@ -26,9 +26,9 @@ const Navbar = () => {
               Home
             </li>
           </Link>
-          <Link to="/listed-Books">
+          <Link to="/about">
             <li className="mr-7 text-lg hover:bg-amber-500 p-1 hover:w-full font-semibold">
-              Listed Books
+              About
             </li>
           </Link>
           <Link to="/Pages-to-Read">
@@ -44,8 +44,8 @@ const Navbar = () => {
         <Link to="/">
           <li className="mr-7 text-lg font-semibold ">Home</li>
         </Link>
-        <Link to="/Listed-Books">
-          <li className="mr-7 text-lg font-semibold">Listed Books</li>
+        <Link to="/about">
+          <li className="mr-7 text-lg font-semibold">About</li>
         </Link>
         <Link to="/Pages-to-Read">
           <li className="mr-7 text-lg font-semibold">Pages to Read</li>

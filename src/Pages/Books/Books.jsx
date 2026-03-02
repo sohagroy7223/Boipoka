@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import Book from "../Book/Book";
 
 const Books = ({ bookData }) => {
-  console.log(bookData);
+  // console.log(bookData);
   // 1st away to fetch and get data form API ************
 
   //   const [allBooks, setAllBooks] = useState([]);

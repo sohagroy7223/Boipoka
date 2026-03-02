@@ -4,6 +4,7 @@ import { Link } from "react-router";
 
 const Book = ({ book }) => {
   const { image, bookId, bookName, author, rating, tags } = book;
+  // console.log(bookId);
   //   const data = use(booksPromise);
   //   console.log(data);
   //   console.log(book);
@@ -16,8 +17,8 @@ const Book = ({ book }) => {
         </div>
         <div>
           <div className="flex text-[#23BE0A] gap-9 ">
-            {tags.map((tag) => (
-              <p>{tag}</p>
+            {tags.map((tag, index) => (
+              <p key={index}>{tag}</p>
             ))}
           </div>
           <h3 className="text-black text-2xl mt-4 font-bold">{bookName}</h3>
