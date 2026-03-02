@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { VscChromeClose } from "react-icons/vsc";
 
@@ -21,28 +21,35 @@ const Navbar = () => {
         <ul
           className={`md:hidden absolute w-44 h-36 rounded-2xl  bg-emerald-600 ml-8 duration-800 p-2.5  ${open ? "top-2" : "-top-44"}`}
         >
-          <li className="mr-7 text-lg hover:bg-amber-500 p-1 hover:w-full font-semibold ">
-            <NavLink to={"/"}>Home</NavLink>
-          </li>
-          <li className="mr-7 text-lg hover:bg-amber-500 p-1 hover:w-full font-semibold">
-            <NavLink to={"/listed Books"}>Listed Books</NavLink>
-          </li>
-          <li className="mr-7 text-lg hover:bg-amber-500 p-1 hover:w-full font-semibold">
-            <NavLink to={"/Pages to Read"}>Pages to Read</NavLink>
-          </li>
+          <Link to="/">
+            <li className="mr-7 text-lg hover:bg-amber-500 p-1 hover:w-full font-semibold ">
+              Home
+            </li>
+          </Link>
+          <Link to="/listed-Books">
+            <li className="mr-7 text-lg hover:bg-amber-500 p-1 hover:w-full font-semibold">
+              Listed Books
+            </li>
+          </Link>
+          <Link to="/Pages-to-Read">
+            {" "}
+            <li className="mr-7 text-lg hover:bg-amber-500 p-1 hover:w-full font-semibold">
+              Pages to Read
+            </li>
+          </Link>
         </ul>
       </span>
 
       <ul className="hidden md:flex">
-        <li className="mr-7 text-lg font-semibold ">
-          <NavLink to={"/"}>Home</NavLink>
-        </li>
-        <li className="mr-7 text-lg font-semibold">
-          <NavLink to={`/Listed Books`}>Listed Books</NavLink>
-        </li>
-        <li className="mr-7 text-lg font-semibold">
-          <NavLink to={"/Pages to Read"}>Pages to Read</NavLink>
-        </li>
+        <Link to="/">
+          <li className="mr-7 text-lg font-semibold ">Home</li>
+        </Link>
+        <Link to="/Listed-Books">
+          <li className="mr-7 text-lg font-semibold">Listed Books</li>
+        </Link>
+        <Link to="/Pages-to-Read">
+          <li className="mr-7 text-lg font-semibold">Pages to Read</li>
+        </Link>
       </ul>
       <div className="flex md:block md:p-3">
         <button className="btn mr-3">sign in</button>
