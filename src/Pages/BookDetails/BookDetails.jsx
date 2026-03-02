@@ -1,5 +1,6 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router";
+import { addToLGStored } from "../../Utility/AddToLS";
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -18,12 +19,17 @@ const BookDetails = () => {
     yearOfPublishing,
     rating,
   } = booksData;
+
+  const handelMarkAsRead = (id) => {
+    addToLGStored(id);
+  };
+
   return (
     <div className="md:flex justify-center border bg-white text-black p-6 gap-4 w-full ">
       <div className="p-10 bg-gray-200 rounded-2xl">
         <img className="w-96" src={image} alt="book image" />
       </div>
-      <div className="w-[540px]  p-4 ">
+      <div className="md:w-[540px] p-4 ">
         <h2 className="text-3xl font-bold">{bookName}</h2>
         <p className="text-lg font-medium text-gray-600 mt-2">by: {author}</p>
         <p className="border text-gray-300 mt-2"></p>
@@ -56,13 +62,18 @@ const BookDetails = () => {
         <p className="flex gap-10 mt-2 text-gray-600">
           Year of Publishing : <b className="text-black">{yearOfPublishing}</b>
         </p>
-        <p className="flex gap-10 mt-2 text-gray-600">
+        <p className="flex gap-28 mt-2 text-gray-600">
           Rating : <b className="text-black">{rating}</b>
         </p>
 
         <div className="mt-5">
-          <button className="btn btn-soft btn-accent mr-3">Accent</button>
-          <button className="btn btn-soft btn-info">Info</button>
+          <button
+            onClick={() => handelMarkAsRead(id)}
+            className="btn btn-soft btn-accent mr-3"
+          >
+            Mark as Read
+          </button>
+          <button className="btn btn-soft btn-info"> Add to Wishlist</button>
         </div>
       </div>
     </div>
