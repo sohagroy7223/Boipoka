@@ -13,7 +13,7 @@ const addToLGStored = (id) => {
     alert("this data already exist");
   } else {
     storeList.push(id);
-    console.log(storeList);
+    // console.log(storeList);
     const data = JSON.stringify(storeList);
     localStorage.setItem("readList", data);
   }

@@ -31,10 +31,10 @@ const Navbar = () => {
               About
             </li>
           </Link>
-          <Link to="/Pages-to-Read">
+          <Link to="/readList">
             {" "}
             <li className="mr-7 text-lg hover:bg-amber-500 p-1 hover:w-full font-semibold">
-              Pages to Read
+              Read List
             </li>
           </Link>
         </ul>
@@ -47,8 +47,8 @@ const Navbar = () => {
         <Link to="/about">
           <li className="mr-7 text-lg font-semibold">About</li>
         </Link>
-        <Link to="/Pages-to-Read">
-          <li className="mr-7 text-lg font-semibold">Pages to Read</li>
+        <Link to="/readList">
+          <li className="mr-7 text-lg font-semibold"> Read List</li>
         </Link>
       </ul>
       <div className="flex md:block md:p-3">
