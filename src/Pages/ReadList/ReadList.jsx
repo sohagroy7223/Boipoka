@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLoaderData } from "react-router";
+import { useLoaderData } from "react-router-dom";
 import { getBookFromStored } from "../../Utility/AddToLS";
 import Book from "../Book/Book";
 import { getItemsFromLS } from "../../Utility/addWishBook";

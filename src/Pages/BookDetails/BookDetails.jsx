@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData, useParams } from "react-router";
+import { useLoaderData, useParams } from "react-router-dom";
 import { addToLGStored } from "../../Utility/AddToLS";
 import { saveBookItemsLs } from "../../Utility/addWishBook";
 import { ToastContainer, toast } from "react-toastify";

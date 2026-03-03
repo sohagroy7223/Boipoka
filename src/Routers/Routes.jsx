@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Root from "../Pages/Root/Root";
 import Error from "../Pages/ErrorPage/Error";
@@ -16,7 +16,7 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        loader: () => fetch("booksData.json"),
+        loader: () => fetch("/booksData.json"),
         Component: Home,
       },
       {
@@ -25,12 +25,12 @@ export const router = createBrowserRouter([
       },
       {
         path: "readList",
-        loader: () => fetch("booksData.json"),
+        loader: () => fetch("/booksData.json"),
         Component: ReadList,
       },
       {
-        path: "/bookDetails/:id",
-        loader: () => fetch("booksData.json"),
+        path: "bookDetails/:id",
+        loader: () => fetch("/booksData.json"),
         Component: BookDetails,
       },
     ],
