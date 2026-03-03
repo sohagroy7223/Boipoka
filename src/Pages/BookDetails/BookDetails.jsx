@@ -1,6 +1,7 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router";
 import { addToLGStored } from "../../Utility/AddToLS";
+import { saveBookItemsLs } from "../../Utility/addWishBook";
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -22,6 +23,10 @@ const BookDetails = () => {
 
   const handelMarkAsRead = (id) => {
     addToLGStored(id);
+  };
+
+  const handelAddWishBook = (id) => {
+    saveBookItemsLs(id);
   };
 
   return (
@@ -73,7 +78,13 @@ const BookDetails = () => {
           >
             Mark as Read
           </button>
-          <button className="btn btn-soft btn-info"> Add to Wishlist</button>
+          <button
+            onClick={() => handelAddWishBook(id)}
+            className="btn btn-soft btn-info"
+          >
+            {" "}
+            Add to Wishlist
+          </button>
         </div>
       </div>
     </div>
