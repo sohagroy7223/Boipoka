@@ -28,6 +28,8 @@ const BookDetails = () => {
   };
 
   const handelAddWishBook = (id) => {
+    toast("Wow so easy!");
+
     saveBookItemsLs(id);
   };
 
@@ -85,8 +87,7 @@ const BookDetails = () => {
             onClick={() => handelAddWishBook(id)}
             className="btn btn-soft btn-info"
           >
-            {" "}
-            Add to Wishlist
+            <ToastContainer /> Add to Wishlist
           </button>
         </div>
       </div>
