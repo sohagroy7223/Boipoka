@@ -38,7 +38,7 @@ const BookDetails = () => {
       <div className="p-10 bg-gray-200 rounded-2xl">
         <img className="w-96" src={image} alt="book image" />
       </div>
-      <div className="md:w-[540px] p-4 ">
+      <div className="md:w-135 p-4 ">
         <h2 className="text-3xl font-bold">{bookName}</h2>
         <p className="text-lg font-medium text-gray-600 mt-2">by: {author}</p>
         <p className="border text-gray-300 mt-2"></p>

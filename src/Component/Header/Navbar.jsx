@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, NavLink } from "react-router";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { VscChromeClose } from "react-icons/vsc";
+import "./nav.css";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -21,35 +22,35 @@ const Navbar = () => {
         <ul
           className={`md:hidden absolute w-44 h-36 rounded-2xl  bg-emerald-600 ml-8 duration-800 p-2.5  ${open ? "top-2" : "-top-44"}`}
         >
-          <Link to="/">
+          <NavLink to="/">
             <li className="mr-7 text-lg hover:bg-amber-500 p-1 hover:w-full font-semibold ">
               Home
             </li>
-          </Link>
-          <Link to="/about">
+          </NavLink>
+          <NavLink to="/about">
             <li className="mr-7 text-lg hover:bg-amber-500 p-1 hover:w-full font-semibold">
               About
             </li>
-          </Link>
-          <Link to="/readList">
+          </NavLink>
+          <NavLink to="/readList">
             {" "}
             <li className="mr-7 text-lg hover:bg-amber-500 p-1 hover:w-full font-semibold">
               Read List
             </li>
-          </Link>
+          </NavLink>
         </ul>
       </span>
 
       <ul className="hidden md:flex">
-        <Link to="/">
-          <li className="mr-7 text-lg font-semibold ">Home</li>
-        </Link>
-        <Link to="/about">
-          <li className="mr-7 text-lg font-semibold">About</li>
-        </Link>
-        <Link to="/readList">
-          <li className="mr-7 text-lg font-semibold"> Read List</li>
-        </Link>
+        <NavLink to="/">
+          <li className="m-5 my-2 text-lg font-semibold ">Home</li>
+        </NavLink>
+        <NavLink to="/about">
+          <li className="m-5 my-2 text-lg font-semibold">About</li>
+        </NavLink>
+        <NavLink to="/readList">
+          <li className="m-5 my-2 text-lg font-semibold"> Read List</li>
+        </NavLink>
       </ul>
       <div className="flex md:block md:p-3">
         <button className="btn mr-3">sign in</button>

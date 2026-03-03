@@ -17,6 +17,7 @@ const ReadList = () => {
       convertedStorBook.includes(book.bookId),
     );
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setReadList(myListBook);
   }, [data]);
 
@@ -26,6 +27,7 @@ const ReadList = () => {
     const myWishList = data.filter((books) =>
       convertedBooks.includes(books.bookId),
     );
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setWishList(myWishList);
   }, [data]);
 
