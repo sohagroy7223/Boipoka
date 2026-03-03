@@ -11,7 +11,7 @@ const saveBookItemsLs = (id) => {
   const books = getItemsFromLS();
 
   if (books.includes(id)) {
-    alert("this data already exist");
+    alert("ai data already exist");
   } else {
     books.push(id);
 

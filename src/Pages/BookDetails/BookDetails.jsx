@@ -2,6 +2,7 @@ import React from "react";
 import { useLoaderData, useParams } from "react-router";
 import { addToLGStored } from "../../Utility/AddToLS";
 import { saveBookItemsLs } from "../../Utility/addWishBook";
+import { ToastContainer, toast } from "react-toastify";
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -22,6 +23,7 @@ const BookDetails = () => {
   } = booksData;
 
   const handelMarkAsRead = (id) => {
+    toast("Wow so easy!");
     addToLGStored(id);
   };
 
@@ -76,6 +78,7 @@ const BookDetails = () => {
             onClick={() => handelMarkAsRead(id)}
             className="btn btn-soft btn-accent mr-3"
           >
+            <ToastContainer />
             Mark as Read
           </button>
           <button

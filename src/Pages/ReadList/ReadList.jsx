@@ -30,9 +30,9 @@ const ReadList = () => {
   }, [data]);
 
   return (
-    <div>
+    <div className="mt-3 bg-blue-900">
       {/* name of each tab group should be unique */}
-      <div className="tabs tabs-4">
+      <div className="tabs tabs-4 ">
         <input
           type="radio"
           name="my_tabs_3"
@@ -40,7 +40,7 @@ const ReadList = () => {
           aria-label="Read book"
           defaultChecked
         />
-        <div className="tab-content bg-base-100 border-base-300 p-6">
+        <div className="tab-content bg-gray-600  border-base-300 p-6">
           read book : {readList.length}
           <div className="grid lg:grid-cols-3 md:grid-cols-2">
             {readList.map((b) => (
@@ -54,7 +54,7 @@ const ReadList = () => {
           className="tab"
           aria-label="Wishlist Books"
         />
-        <div className="tab-content bg-base-100 border-base-300 p-6">
+        <div className="tab-content bg-gray-600 border-base-300 p-6">
           Wishlist Books : {Wishlist.length}
           <div className="grid lg:grid-cols-3 md:grid-cols-2">
             {Wishlist.map((wishBook) => (
