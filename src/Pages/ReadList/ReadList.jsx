@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router";
+import { getBookFromStored } from "../../Utility/AddToLS";
 
 const ReadList = () => {
+  const [readList, setReadList] = useState([]);
+
   const data = useLoaderData();
-  console.log(data);
+
+  useEffect(() => {
+    const storeBook = getBookFromStored();
+    const convertedStorBook = storeBook.map((id) => parseInt(id));
+    const myListBook = data.filter((book) =>
+      convertedStorBook.includes(book.bookId),
+    );
+    setReadList(myListBook);
+  }, []);
 
   return (
     <div>
@@ -16,7 +27,7 @@ const ReadList = () => {
           aria-label="Read book"
         />
         <div className="tab-content bg-base-100 border-base-300 p-6">
-          read book
+          read book : {readList.length}
         </div>
         <input
           type="radio"

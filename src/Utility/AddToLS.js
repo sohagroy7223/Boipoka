@@ -18,4 +18,4 @@ const addToLGStored = (id) => {
     localStorage.setItem("readList", data);
   }
 };
-export { addToLGStored };
+export { addToLGStored, getBookFromStored };
