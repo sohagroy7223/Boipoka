@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router";
 import { getBookFromStored } from "../../Utility/AddToLS";
 import Book from "../Book/Book";
+import { getItemsFromLS } from "../../Utility/addWishBook";
 
 const ReadList = () => {
   const [readList, setReadList] = useState([]);
+  const [Wishlist, setWishList] = useState([]);
 
   const data = useLoaderData();
 
@@ -16,6 +18,15 @@ const ReadList = () => {
     );
 
     setReadList(myListBook);
+  }, [data]);
+
+  useEffect(() => {
+    const storeBooks = getItemsFromLS();
+    const convertedBooks = storeBooks.map((id) => parseInt(id));
+    const myWishList = data.filter((books) =>
+      convertedBooks.includes(books.bookId),
+    );
+    setWishList(myWishList);
   }, [data]);
 
   return (
@@ -44,7 +55,12 @@ const ReadList = () => {
           aria-label="Wishlist Books"
         />
         <div className="tab-content bg-base-100 border-base-300 p-6">
-          Wishlist Books
+          Wishlist Books : {Wishlist.length}
+          <div className="grid lg:grid-cols-3 md:grid-cols-2">
+            {Wishlist.map((wishBook) => (
+              <Book key={wishBook.bookId} book={wishBook}></Book>
+            ))}
+          </div>
         </div>
       </div>
     </div>

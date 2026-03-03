@@ -21,4 +21,4 @@ const saveBookItemsLs = (id) => {
   }
 };
 
-export { saveBookItemsLs };
+export { saveBookItemsLs, getItemsFromLS };
